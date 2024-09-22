@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  foundry-vtt:
+  - apiVersion: v2
+    appVersion: v11.315
+    created: "2024-09-22T22:07:21.165114638+01:00"
+    description: Foundry Virtual Tabletop
+    digest: 7694f0d6b7c67aeed4656c1a248655e729d057d5c39cbf8fd53cd4e9258c45d1
+    icon: https://artifacthub.io/image/3e8ce5cf-7afe-4032-bae2-500b17e64b11@1x
+    keywords:
+    - game
+    - server
+    - vtt
+    - virtualtabletop
+    - foundryvtt
+    - foundry
+    maintainers:
+    - email: hugo.kenshin@gmail.com
+      name: hugoprudente
+    name: foundry-vtt
+    sources:
+    - https://github.com/hugoprudente/charts/tree/main/incubator/foundry-vtt
+    type: application
+    urls:
+    - foundry-vtt-11.315.0.tgz
+    version: 11.315.0
+generated: "2024-09-22T22:07:21.163971883+01:00"

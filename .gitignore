@@ -5,7 +5,7 @@ __pycache__
 .envrc
 *-mine.*
 *.egg-info
-*.tgz
+# *.tgz
 *.zip
 .secret
 .secrets
