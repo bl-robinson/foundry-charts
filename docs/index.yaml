@@ -3,9 +3,9 @@ entries:
   foundry-vtt:
   - apiVersion: v2
     appVersion: v11.315
-    created: "2024-09-22T22:32:57.228346741+01:00"
+    created: "2024-09-22T22:37:35.491900322+01:00"
     description: Foundry Virtual Tabletop
-    digest: a22f8e86902b305a180da7bc76de746a09f9148faea109f135b1ef5fd9568b3f
+    digest: 3a1f0476c3738474b74c3ca2456266072dd0ad826318e2fdba07843b6ecf93f6
     icon: https://artifacthub.io/image/3e8ce5cf-7afe-4032-bae2-500b17e64b11@1x
     keywords:
     - game
@@ -24,4 +24,4 @@ entries:
     urls:
     - docs/foundry-vtt-11.315.0.tgz
     version: 11.315.0
-generated: "2024-09-22T22:32:57.226658613+01:00"
+generated: "2024-09-22T22:37:35.490235317+01:00"
