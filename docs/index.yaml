@@ -22,6 +22,6 @@ entries:
     - https://github.com/hugoprudente/charts/tree/main/incubator/foundry-vtt
     type: application
     urls:
-    - docs/foundry-vtt-11.315.0.tgz
+    - foundry-vtt-11.315.0.tgz
     version: 11.315.0
 generated: "2024-09-22T22:37:35.490235317+01:00"
