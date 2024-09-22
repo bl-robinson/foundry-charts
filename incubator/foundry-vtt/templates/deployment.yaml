@@ -94,19 +94,29 @@ spec:
             value: {{ .Values.container.verbose | quote }}
           {{- end }}
           # Foundry fetch files only
-          {{- if .Values.foundryvtt.username }}
+          {{- if or .Values.foundryvtt.username .Values.foundryvtt.existingSecret.username }}
           - name: FOUNDRY_USERNAME
             valueFrom:
               secretKeyRef:
+                {{- if .Values.foundryvtt.existingSecret.username }}
+                name: {{ .Values.foundryvtt.existingSecret.secretName }}
+                key: {{ .Value.foundryvtt.existingSecret.username }}
+                {{- else }}
                 name: {{ template "foundry-vtt.fullname" . }}
                 key: username
+                {{- end }}
           {{- end }}
-          {{- if .Values.foundryvtt.password }}
+          {{- if or .Values.foundryvtt.password .Values.foundryvtt.existingSecret.password  }}
           - name: FOUNDRY_PASSWORD
             valueFrom:
               secretKeyRef:
+                {{- if .Values.foundryvtt.existingSecret.password }}
+                name: {{ .Values.foundryvtt.existingSecret.secretName }}
+                key: {{ .Value.foundryvtt.existingSecret.password }}
+                {{- else }}
                 name: {{ template "foundry-vtt.fullname" . }}
                 key: password
+                {{- end }}
           {{- end }}
           {{- if .Values.foundryvtt.releaseUrl }}
           - name: FOUNDRY_RELEASE_URL
@@ -116,8 +126,13 @@ spec:
           - name: FOUNDRY_ADMIN_KEY
             valueFrom:
               secretKeyRef:
+                {{- if .Values.foundryvtt.existingSecret.adminPasswordKey }}
+                name: {{ .Values.foundryvtt.existingSecret.secretName }}
+                key: {{ .Values.foundryvtt.existingSecret.adminPasswordKey }}
+                {{- else }}
                 name: {{ template "foundry-vtt.fullname" . }}
                 key: adminPassword
+                {{- end }}
           {{- if .Values.foundryvtt.hostname }}
           - name: FOUNDRY_HOSTNAME
             value: {{ .Values.foundryvtt.hostname }}
@@ -126,12 +141,17 @@ spec:
           - name: FOUNDRY_LANGUAGE
             value: {{ .Values.foundryvtt.language }}
           {{- end }}
-          {{- if .Values.foundryvtt.licenseKey }}
+          {{- if or .Values.foundryvtt.licenseKey .Values.foundryvtt.existingSecret.licenseKey }}
           - name: FOUNDRY_LICENSE_KEY
             valueFrom:
               secretKeyRef:
+                {{- if .Values.foundryvtt.existingSecret.licenseKey }}
+                name: {{ .Values.foundryvtt.existingSecret.secretName }}
+                key: {{ .Values.foundryvtt.existingSecret.licenseKey }}
+                {{- else }}
                 name: {{ template "foundry-vtt.fullname" . }}
                 key: licenseKey
+                {{- end }}
           {{- end }}
           {{- if .Values.foundryvtt.minifyStaticFiles }}
           - name: FOUNDRY_MINIFY_STATIC_FILES

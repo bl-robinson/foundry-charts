@@ -192,7 +192,11 @@ service:
 ## @param foundryvtt.username Username of the Account who bought the FoundryVTT License
 ## @param foundryvtt.password Password of the Account who bought the FoundryVTT License
 ## @param foundryvtt.licenseKey License Key for FoundryVTT. If set the account infos are ignored.
-## @param foundryvtt.existingSecret Name of an existing Secret to fetch the account from. If set, account settings from values are ignored. Must be used in combination with `foundryvtt.existingLicenseType` to fetch the correct data
+## @param foundryvtt.existingSecret.secretName of an existing Secret to fetch the account from. If set, account settings from values are ignored. Must be used in combination with `foundryvtt.existingLicenseType` to fetch the correct data
+## @param foundryvtt.existingSecret.adminPasswordKey
+## @param foundryvtt.existingSecret.licenseKey
+## @param foundryvtt.existingSecret.username
+## @param foundryvtt.existingSecret.password
 ## @param foundryvtt.existingLicenseType Type of License to be fetched from the existing secret. Must be either `account` or `licenseKey`. If set to `account`, the `existingSecret` must contain a `username`/`password` data pair. If set to `licenseKey`, the secret must contain a `licenseKey` data entry
 ## @param foundryvtt.hostname Hostname of FoundryVTT
 ## @param foundryvtt.language Language to use
@@ -215,6 +219,13 @@ foundryvtt:
 
   ## Account username or email address for foundryvtt.com. Required for downloading an application distribution.
   username: ""
+
+  existingSecret:
+    secretName: ""
+    adminPasswordKey: ""
+    licenseKey: ""
+    username: ""
+    password: ""
 
   ## Account password for foundryvtt.com. Required for downloading an application distribution.
   password: ""
